@@ -1,15 +1,14 @@
 import requests
-import json
 
 class GetRequester:
 
     def __init__(self, url):
         self.url = url
-        self.response = None  # store response for reuse
+        self.response = None
 
     def get_response_body(self):
         self.response = requests.get(self.url)
-        return self.response.text
+        return self.response 
 
     def load_json(self):
         if self.response is None:
